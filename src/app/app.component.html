@@ -1,1 +1,142 @@
-<app-homepage></app-homepage>
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
+
+<router-outlet></router-outlet> -->
+
+<div class="container">
+    <ngb-tabset [justify]="currentJustify">
+  
+        <ngb-tab title="Monday">
+            <ng-template ngbTabContent>
+              <p>Monday</p>
+
+              <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Workout</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Duration</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let workout of workoutsM; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ workout.name }}</td>
+                    <td>{{ workout.category }}</td>
+                    <td>{{ workout.duration }}</td>
+                  </tr>
+                  </tbody>
+                </table>
+
+
+                <div style="text-align:center">
+                  
+                  <div class="md-form">
+                    <input mdbInput type="text" name="text" [(ngModel)]="nam" id="form1" class="form-control">
+                    <label for="form1" class="">Workout</label>
+                    <!-- <p>Look at me! {{nam}}</p> -->
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col">
+                      <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{cat}}</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                          <button ngbDropdownItem>
+                            Strength
+                          </button>
+                          <button ngbDropdownItem>Cardio</button>
+                          <p>{{category}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="md-form">
+                    <input mdbInput type="text" name="text" [(ngModel)]="dur" id="form1" class="form-control">
+                    <label for="form1" class="">Duration</label>
+                    <!-- <p>Look at me! {{dur}}</p> -->
+                  </div>
+                  
+                  <button (click)="addHero()" type="button" class="btn btn-light">Add</button>
+                
+
+                   
+                </div>
+
+                
+                
+              
+
+              
+
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Tuesday">
+            <ng-template ngbTabContent>
+              <p>Tuesday</p>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Wednesday">
+            <ng-template ngbTabContent>
+              <p>Wednesday</p>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Thursday">
+            <ng-template ngbTabContent>
+              <p>Thursday</p>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Friday">
+            <ng-template ngbTabContent>
+              <p>Friday</p>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Saturday">
+            <ng-template ngbTabContent>
+              <p>Saturday</p>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Sunday">
+            <ng-template ngbTabContent>
+              <p>Sunday</p>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</div>
+
+<!-- <div class="btn-group btn-group-toggle" ngbRadioGroup [(ngModel)]="currentJustify">
+  <label ngbButtonLabel class="btn-outline-primary btn-sm">
+    <input ngbButton type="radio" value="start">Start
+  </label>
+  <label ngbButtonLabel class="btn-outline-primary btn-sm">
+    <input ngbButton type="radio" value="center">Center
+  </label>
+  <label ngbButtonLabel class="btn-outline-primary btn-sm">
+    <input ngbButton type="radio" value="end">End
+  </label>
+  <label ngbButtonLabel class="btn-outline-primary btn-sm">
+    <input ngbButton type="radio" value="fill">Fill
+  </label>
+  <label ngbButtonLabel class="btn-outline-primary btn-sm">
+    <input ngbButton type="radio" value="justified">Justified
+  </label>
+</div> -->
