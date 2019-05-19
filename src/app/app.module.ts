@@ -6,13 +6,23 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { RegisterComponent } from './components/register/register.component';
+//import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    AboutUsComponent,
+    ContactComponent,
+    RegisterComponent,
+    //HomepageComponent
   ],
   imports: [
     BrowserModule,
