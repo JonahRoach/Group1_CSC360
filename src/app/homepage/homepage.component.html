@@ -23,8 +23,11 @@
           <!-- BODY -->
           <div *ngIf="user.uid | async as uid;  else login">
               User {{uid}} is logged in.
-              <!-- TODO!: Route to main page-->
-              <ng-container *ngIf="user.isLoggedIn(); then modal.dismiss('');"></ng-container>  <!-- Exit modal if already logged in -->
+              
+              <ng-container *ngIf="user.isLoggedIn(); then modal.dismiss('');">
+                <!-- TODO!: Route to main page-->
+              </ng-container>  <!-- Exit modal if already logged in -->
+          
           </div> 
           
           <form>
