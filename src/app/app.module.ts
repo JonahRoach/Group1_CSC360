@@ -17,7 +17,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     HeaderComponent,
     AboutUsComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
     HomepageComponent
   ],
   imports: [
