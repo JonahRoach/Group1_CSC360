@@ -10,8 +10,10 @@
     <!-- <a href="#" class="sign-in grey">Sign in</a> -->
 
     <ng-template #content let-modal>
+        
         <div class="modal-header">
           <!-- HEADER -->
+          
           <h4 class="modal-title" id="modal-basic-title">Login</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
@@ -19,6 +21,12 @@
         </div>
         <div class="modal-body">
           <!-- BODY -->
+          <div *ngIf="user.uid | async as uid;  else login">
+              User {{uid}} is logged in.
+              <!-- TODO!: Route to main page-->
+              <ng-container *ngIf="user.isLoggedIn(); then modal.dismiss('');"></ng-container>  <!-- Exit modal if already logged in -->
+          </div> 
+          
           <form>
               <div class="form-group">
                   <label for="inputUserName">Username</label>
@@ -30,16 +38,19 @@
                   <input class="form-control" placeholder="Login Password"
                           type="password" id="inputPassword" />
               </div>
+              <button type="button" class="btn btn-info" (click)="user.login()" >Login With Google</button>
           </form>
         </div>
         <div class="modal-footer">
-          <!-- FOOTER -->
+          <!-- FOOTER --> 
           <button type="button" class="btn btn-primary">Login</button>
           <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
+          
         </div>
       </ng-template>
       
       <button class="btn btn-light btn-sm" (click)="open(content)">Login</button>
+      <button class="btn btn-light btn-sm" (click)="user.logout()">TEMP: logout</button>
       
       <hr>
   </div>

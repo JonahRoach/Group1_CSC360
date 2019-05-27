@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from './shared/user.service';
 
 @Component({
   selector: 'app-homepage',
@@ -9,7 +10,9 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class HomepageComponent implements OnInit {
   closeResult: string;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public user:UserService) { 
+    
+  }
 
   ngOnInit() {
   }
