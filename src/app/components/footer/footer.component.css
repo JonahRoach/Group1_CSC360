@@ -1,14 +1,14 @@
   .navbar {
-    position: relative;
     padding-top: auto;
     bottom: 0;
-    top: 100px;
-    width: 100%;
-    /*Fixed footer height */
-    height: 20%;
     background-color: #f5f5f5;
   }
 
-a{
+  li {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  a{
     color: white;
-}
+  }  

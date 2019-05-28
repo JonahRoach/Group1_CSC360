@@ -17,6 +17,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 //Environment
 import { environment } from '../environments/environment';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FoodComponent } from './food/food.component';
+import { WorkoutComponent } from './workout/workout.component';
+import { BmiComponent } from './bmi/bmi.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { environment } from '../environments/environment';
     AboutUsComponent,
     ContactComponent,
     FooterComponent,
-    HomepageComponent
+    HomepageComponent,
+    DashboardComponent,
+    FoodComponent,
+    WorkoutComponent,
+    BmiComponent,
   ],
   imports: [
     BrowserModule,
