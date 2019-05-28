@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
+    apiKey: "AIzaSyABGbNFMgQM7xJEknHmmziAPK9ETzUZxTI",
+    authDomain: "login-bea27.firebaseapp.com",
+    databaseURL: "https://login-bea27.firebaseio.com",
+    projectId: "login-bea27",
+    storageBucket: "login-bea27.appspot.com",
+    messagingSenderId: "316409651053",
+    appId: "1:316409651053:web:d80b32289bce39f4"
   }
 };
 
