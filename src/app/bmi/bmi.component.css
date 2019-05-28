@@ -1,0 +1,72 @@
+body {
+    color: #555555;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+
+    line-height: 1.6em;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.companysName {
+    background-color: #1e90ff; 
+    color: #f0ffff;  
+
+    border-right: 10px black solid;
+    border-left: 5px black solid;
+    border-top: 5px black solid;
+    border-bottom: 5px black solid;
+
+    border-width: 10px 10px 10px 10px;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    margin-top: 20px;
+    margin: 20px 0;
+}
+
+.companysName h1 {
+    text-align: center;
+    font-family: Tahoma;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: 0.1em;
+    word-spacing: 1em;
+}
+
+.calculateBMI {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.BMI {
+    padding: 20px;
+}
+
+.BMI .formBMI {
+    padding-bottom: 15px;
+}
+
+.BMI label {
+    display: block;
+}
+
+.BMI input[type="text"], .BMI textarea {
+    padding: 8px;
+    width: 20%;
+}
+

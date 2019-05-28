@@ -1,0 +1,14 @@
+  .navbar {
+    padding-top: auto;
+    bottom: 0;
+    background-color: #f5f5f5;
+  }
+
+  li {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  a{
+    color: white;
+  }  
