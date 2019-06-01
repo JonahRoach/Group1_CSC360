@@ -21,6 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FoodComponent } from './food/food.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { BmiComponent } from './bmi/bmi.component';
+import { SignupUserdataComponent } from './components/signup-userdata/signup-userdata.component';
+import { SignupUsergoalsComponent } from './components/signup-usergoals/signup-usergoals.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { BmiComponent } from './bmi/bmi.component';
     FoodComponent,
     WorkoutComponent,
     BmiComponent,
+    SignupUserdataComponent,
+    SignupUsergoalsComponent,
   ],
   imports: [
     BrowserModule,

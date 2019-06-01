@@ -1,0 +1,104 @@
+
+<!-- BF% HEADER -->
+<div class="profileNav">
+  <div class="container">
+    <!-- Title --> 
+    <div class="pageTitle">
+      <h1>Tell us about yourself</h1>
+    </div>
+    <div class="pageSubtitle">
+        <h2>Step 3/3</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container2">
+<div class="bfperBody">
+<form>
+<!--GOAL-->
+<div class="row">
+    <div class="col">
+      <div class="weirdfuckingdropdown">
+      <div class="option">
+        Goal
+      </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="weirdfuckingdropdown">
+        <select class="form-control" required
+        [(ngModel)]="usergoals.goaltype" name="goaltype">
+          <option *ngFor="let goal of goalTypes" [value]="goal">{{goal}}</option>
+         </select>
+      </div>
+    </div>
+</div>
+<!--ACTIVITY LEVEL-->
+<div class="row">
+    <div class="col">
+      <div class="weirdfuckingdropdown">
+      <div class="option">
+        Activity Level
+      </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="weirdfuckingdropdown">
+        <select class="form-control"
+          required
+          [(ngModel)]="usergoals.activity" name="activity">
+            <option *ngFor="let t of activityTypes"
+              [value]="t">
+              {{t}}
+            </option>
+        </select>
+      </div>
+    </div>
+</div>
+
+
+<!--GOAL WEIGHT-->
+<div class="row">
+    <div class="col">
+      <div class="underdropdown">
+      <div class="option">
+        Goal Weight
+      </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="underdropdown">
+      <input [attr.disabled]="usergoals.goaltype=='Maintain' ? '' : null" [(ngModel)]="usergoals.goal"
+       [ngModelOptions]="{standalone: true}"
+        type="number" 
+        id="defaultContactFormName" 
+        class="form-control mb-4" 
+        placeholder="Pounds (lbs)" 
+        min="75" 
+        max="500">
+      </div>
+    </div>
+</div>
+<!--GOAL LOSS RATE-->
+<div class="row">
+    <div class="col">
+      <div class="option">Loss/Gain per Week*</div>
+    </div>
+    <div class="col">
+        <input [attr.disabled]="usergoals.goaltype=='Maintain' ? '' : null" [(ngModel)]="usergoals.changeperweek" [ngModelOptions]="{standalone: true}" type="number" id="defaultContactFormName" class="form-control mb-4" placeholder="Pounds (lbs)" min="0" max="2">
+    </div>
+</div>
+  
+<!--- CONTINUE --->
+<div class="button">
+  <button mdbBtn color="info" block="true" class="my-4" type="submit">Complete Registration</button>
+</div>
+
+
+<hr>
+<div class="button">
+*It is not healthy to gain/lose more than 2 pounds a week.
+</div>
+</form>
+</div>
+</div>

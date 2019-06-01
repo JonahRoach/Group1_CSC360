@@ -1,0 +1,90 @@
+
+<!-- BF% HEADER -->
+<div class="profileNav">
+  <div class="container">
+    <!-- Title --> 
+    <div class="pageTitle">
+      <h1>Tell us about yourself</h1>
+    </div>
+    <div class="pageSubtitle">
+        <h2>Step 2/3</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container2">
+    <div class="bfperBody">
+      <form>
+      <!--NAME-->
+      <div class="row">
+          <div class="col">
+            <div class="option">First Name</div>
+          </div>
+          <div class="col">
+            <input [(ngModel)]="userinfo.name" [ngModelOptions]="{standalone: true}" type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+          </div>
+      </div>
+      <!--GENDER--->
+      <div class="row">
+          <div class="col">
+            <div class="weirdfuckingdropdown">
+            <div class="option">Gender</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="weirdfuckingdropdown">
+            <select class="form-control" required
+            [(ngModel)]="userinfo.gender" name="gender">
+              <option *ngFor="let gen of genders" [value]="gen">{{gen}}</option>
+            </select>
+            </div>
+          </div>
+      </div>
+      <!--Age-->
+      <div class="row">
+          <div class="col">
+            <div class="underdropdown">
+            <div class="option">
+              Age
+            </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="underdropdown">
+            <input [(ngModel)]="userinfo.age" [ngModelOptions]="{standalone: true}" type="number" id="defaultContactFormName" class="form-control mb-4" placeholder="Age" min="18" max ="100">
+          </div>
+          </div>
+      </div>
+      <!--Height-->
+      <div class="row">
+          <div class="col">
+            <div class="option">Height (Feet)</div>
+          </div>
+          <div class="col">
+              <input [(ngModel)]="userinfo.hFt" [ngModelOptions]="{standalone: true}" type="number" id="defaultContactFormName" class="form-control mb-4" placeholder="Feet" min="2" max="8">
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+            <div class="option">(Inches)</div>
+          </div>
+          <div class="col">
+              <input [(ngModel)]="userinfo.hIn" [ngModelOptions]="{standalone: true}" type="number" id="defaultContactFormName" class="form-control mb-4" placeholder="Inches" min="0" max='11'>
+          </div>
+      </div>
+      <!--Weight-->
+      <div class="row">
+        <div class="col">
+          <div class="option">Weight (lbs)</div>
+        </div>
+        <div class="col">
+          <input [(ngModel)]="userinfo.weight" [ngModelOptions]="{standalone: true}" type="number" id="defaultContactFormName" class="form-control mb-4" placeholder="Weight" min="75" max="500">
+        </div>
+      </div>  
+
+      <!--- CONTINUE --->
+      <div class="button"><button type="button" (click)="save()" routerLink="/signup-step3" mdbBtn color="info" block="true" class="my-4" type="submit">Continue</button> </div>
+      <label>test: {{userinfo.gender}}</label>
+      </form>
+    </div>
+</div>

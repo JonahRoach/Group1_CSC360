@@ -7,6 +7,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FoodComponent } from './food/food.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { BmiComponent } from './bmi/bmi.component';
+import { SignupUserdataComponent } from './components/signup-userdata/signup-userdata.component';
+import { SignupUsergoalsComponent } from './components/signup-usergoals/signup-usergoals.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutUsComponent,
+  },
+  {
+    path: 'signup-step2',
+    component: SignupUserdataComponent,
+  },
+  {
+    path: 'signup-step3',
+    component: SignupUsergoalsComponent,
   },
 ];
 
