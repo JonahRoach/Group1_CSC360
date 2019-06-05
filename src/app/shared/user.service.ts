@@ -22,8 +22,17 @@ export class UserService {
   constructor(private afAuth: AngularFireAuth) { 
 
   }
-  login(){
+  googleLogin(){
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+  facebookLogin(){
+    this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
+  }
+  twitterLogin(){
+    this.afAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
+  }
+  gitHubLogin(){
+    this.afAuth.auth.signInWithPopup(new auth.GithubAuthProvider());
   }
   logout(){
     this.afAuth.auth.signOut();

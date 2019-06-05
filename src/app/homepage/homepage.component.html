@@ -1,10 +1,66 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 <title>RecCenter Home</title>
 
 <div class="jumbotron jumbotron-fluid text-center bg-blue">
   <div class="container">
     <h1>RecCenter</h1>
     <p>Track your health</p>
-    <button type="button" class="btn btn-success">Sign Up</button>
+
+    <ng-template #register let-modal>
+        
+        <div class="modal-header">
+          <!-- HEADER -->
+          
+          <h4 class="modal-title" id="modal-basic-title">Register</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- BODY -->
+          <div *ngIf="user.uid | async as uid;  else login">
+              User {{uid}} is logged in.
+              
+              <ng-container *ngIf="user.isLoggedIn(); then modal.dismiss('');">
+                <!-- TODO!: Route to main page-->
+              </ng-container>  <!-- Exit modal if already logged in -->
+          
+          </div> 
+          
+          <form>
+              <div class="form-group">
+                  <label for="inputUserName">Email</label>
+                  <input class="form-control" placeholder="Register Email"
+                          type="text" id="inputUserName" />
+              </div>
+              <div class="form-group">
+                  <label for="inputPassword">Password</label>
+                  <input class="form-control" placeholder="Login Password"
+                          type="password" id="inputPassword" />
+              </div>
+
+              <div class="form-group">
+              <button type="button" class="btn btn-info" (click)="user.googleLogin()" ><i class="fab fa-google"></i> Login With Google</button>
+
+              <button type="button" class="btn btn-info" (click)="user.facebookLogin()" ><i class="fab fa-facebook-f"></i> Login With Facebook</button>
+
+              <button type="button" class="btn btn-info" (click)="user.twitterLogin()" ><i class="fab fa-twitter"></i> Login With Twitter</button>
+
+              <button type="button" class="btn btn-info" (click)="user.gitHubLogin()" ><i class="fab fa-github"></i> Login With Github</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <!-- FOOTER --> 
+          <button type="button" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
+        
+        </div>
+      </ng-template>
+
+    <button type="button" class="btn btn-success" (click)="open(register)" >Sign Up</button>
+
     <br>
     <p class="sign-in">Already a member?</p>
     <!-- <a href="#" class="sign-in grey">Sign in</a> -->
@@ -41,7 +97,7 @@
                   <input class="form-control" placeholder="Login Password"
                           type="password" id="inputPassword" />
               </div>
-              <button type="button" class="btn btn-info" (click)="user.login()" >Login With Google</button>
+              <button type="button" class="btn btn-info" (click)="user.googleLogin()" >Login With Google</button>
           </form>
         </div>
         <div class="modal-footer">
