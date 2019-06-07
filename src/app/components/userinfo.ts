@@ -1,8 +1,7 @@
 export class UserInfo {
-    name: string;
-    gender: string;
-    age: number;
-    hFt: number;
-    hIn: number;
-    weight: number;
+    gender= "Male"
+    age = 25
+    hFt=  5
+    hIn= 10.5;
+    weight= 155;
   }
