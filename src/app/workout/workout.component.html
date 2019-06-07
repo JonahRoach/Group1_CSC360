@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+		<table class="table table-striped">
+		<thead>
+		  <tr>
+			<th>Muscle Position</th>
+		  </tr>
+		</thead>
+		<tbody style="background-image:url(https://wger.de/static/images/muscles/muscular_system_front.svg);background-repeat:no-repeat;">
+			<img src={{FimgString}}>
+		</tbody>
+		</table>
+	</div>
+	<div class="col-sm">
+	  <table class="table table-striped">
+		<thead>
+		  <tr>
+			<th> Front Muscle</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr *ngFor="let muscle of muscle" 
+			  (click)="FSearch(muscle.id)">
+			<td *ngIf="muscle.is_front">{{muscle.name}}</td>
+		  </tr>
+		</tbody>
+	  </table>
+	</div>
+	<div class="col-sm">
+		<table class="table table-striped">
+		<thead>
+		  <tr>
+			<th>Exercises</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr *ngFor="let exercise of Fexercises">
+		     <a routerLink="/exeinfo/{{exercise}}"
+			    routerLinkActive="active">
+				<td>{{exercise}}</td>
+			 </a>	
+		  </tr>
+		</tbody>
+		</table>
+	</div>
+  </div>
+</div>
+<br/>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+		<table class="table table-striped">
+		<thead>
+		  <tr>
+			<th>Muscle Position</th>
+		  </tr>
+		</thead>
+		<tbody style="background-image:url(https://wger.de/static/images/muscles/muscular_system_back.svg);background-repeat:no-repeat;">
+			<img src={{BimgString}}>
+		</tbody>
+		</table>
+	</div>
+	<div class="col-sm">
+	  <table class="table table-striped">
+		<thead>
+		  <tr>
+			<th> Back Muscle</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr *ngFor="let muscle of muscle" (click)="BSearch(muscle.id)">
+			<td *ngIf="!muscle.is_front">{{muscle.name}}</td>
+		  </tr>
+		</tbody>
+	  </table>
+	</div>
+	<div class="col-sm">
+		<table class="table table-striped">
+		<thead>
+		  <tr>
+			<th>Exercises</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr *ngFor="let exercise of Bexercises">
+		     <a routerLink="/exeinfo/{{exercise}}"
+			    routerLinkActive="active">
+				<td>{{exercise}}</td>
+			 </a>	
+		  </tr>
+		</tbody>
+		</table>
+	</div>
+  </div>
+</div>

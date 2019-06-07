@@ -1,0 +1,33 @@
+<table class="table table-striped">
+		<tbody>
+		  <tr>
+			<td>Exercise Name</td>
+			<td>{{name}}</td>
+		  </tr>
+		  <tr>
+			<td>Category</td>
+			<td>{{category}}</td>
+		  </tr>
+		  <tr>
+			<td>Description</td>
+			<td [innerHtml]="description"></td>
+		  </tr>
+		  <tr>
+			<td>Muscle trained</td>
+			<td>
+				<ul>
+					<li *ngFor="let muscle of muscles">{{muscle.name}}</li>
+				</ul>
+			</td>
+		  </tr>
+		  <tr>
+			<td>Secondary Muscle trained</td>
+			<td>
+				<ul>
+					<li *ngFor="let muscle_sec of muscles_sec">{{muscle_sec.name}}</li>
+				</ul>
+			</td>
+		  </tr>
+		  <tr><button (click)="goBack()">Go Back</button></tr>
+		</tbody>
+</table>

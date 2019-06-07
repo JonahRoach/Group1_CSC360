@@ -3,23 +3,31 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutusComponent } from './aboutus/aboutus.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import {MatGridListModule, MatCardModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { WorkoutComponent } from './workout/workout.component';
+import { ExeinfoComponent } from './exeinfo/exeinfo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutusComponent
+    FooterComponent,
+    HeaderComponent,
+    WorkoutComponent,
+    ExeinfoComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
+	HttpClientModule,
     AppRoutingModule,
 	FormsModule,
-	BrowserAnimationsModule,
-	MatGridListModule,
-	MatCardModule
+	BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
