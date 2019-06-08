@@ -29,10 +29,10 @@ export class FoodComponent implements OnInit {
 
     this.result.branded.forEach(element => {
       this.fullList.push(element);
-    });;
+    });
     this.result.common.forEach(element => {
       this.fullList.push(element);
-    })
+    });
 
     // this.data = this.fullList.filter((item, pos, ar) => {
     //     if (ar.indexOf(item.tag_name) === pos)
