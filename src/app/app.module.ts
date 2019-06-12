@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { ExeinfoComponent } from './exeinfo/exeinfo.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ExeinfoComponent } from './exeinfo/exeinfo.component';
     FooterComponent,
     HeaderComponent,
     WorkoutComponent,
-    ExeinfoComponent
+    ExeinfoComponent,
+    HomepageComponent
   ],
   imports: [
     NgbModule,
