@@ -18,7 +18,8 @@ export class UserDataCRUDService {
       try{
         if(user){
           this.uid= await user.uid
-          this.userdataListRef = this.getUserdataList()
+          this.userdataListRef = await this.getUserdataList()
+          this.getUserdata()
         }  
         console.log("Done saving everything: "+this.uid)
       }
@@ -40,12 +41,14 @@ export class UserDataCRUDService {
       goalweight: data.goalweight,
       change: data.change,
     })
+    this.getUserdata()
   }
 
   // Single Userdata Object
   getUserdata(){
-    this.userdataObjRef = this.db.object('userdata/'+this.uid);
-    return this.userdataObjRef;
+    this.userdataListRef.valueChanges().subscribe(items => {
+      this.userdataObjRef = items[0];
+    });
   }
 
   getUserdataList(){
