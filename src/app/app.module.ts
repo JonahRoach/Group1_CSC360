@@ -25,6 +25,8 @@ import { BmiComponent } from './bmi/bmi.component';
 import { HttpClientModule } from '@angular/common/http';
 // Autocomplete component for angular
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { SignupUserdataComponent } from './signup-userdata/signup-userdata.component';
+import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     FoodComponent,
     WorkoutComponent,
     BmiComponent,
+    SignupUserdataComponent,
+    UpdateUserdataComponent,
   ],
   imports: [
     BrowserModule,
