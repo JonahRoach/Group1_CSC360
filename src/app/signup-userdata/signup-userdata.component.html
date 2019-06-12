@@ -1,0 +1,178 @@
+
+
+<!-- BF% HEADER -->
+<div class="profileNav">
+  <div class="container">
+    <!-- Title --> 
+    <div class="pageTitle">
+      <h1>Tell us about yourself</h1>
+    </div>
+    <div class="pageSubtitle">
+        <h2>Step 2/2</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container2">
+  <div class="bfperBody">
+    <form [formGroup]="userinfoForm" novalidate (ngSubmit)="submitUserinfo()">
+      <!----------------------------------------------------------------------------------------------->
+      <!-- Age -->
+      <div class="row">
+        <label>Age: </label>
+        <input type="number" required
+               formControlName="age" 
+               class="form-control" 
+               placeholder="Age" 
+               min="18" >
+        <!-- Error Catch -->
+        <p *ngIf="age.touched && age.invalid"
+          class = "error">
+          <sup>*</sup>Please enter a valid age.
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+      <!-- Weight-->
+      <div class="row">
+        <label>Weight(lbs): </label>
+        <input type="number" required
+                formControlName="weight" 
+                class="form-control" 
+                placeholder="Weight" 
+                min="75" 
+                max="500">
+        <!-- Error Catch -->
+        <p *ngIf="weight.touched && weight.invalid"
+          class = "error">
+          <sup>*</sup>Please enter a valid weight.
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+      <!-- hFt-->
+      <div class="row">
+        <label>Height(Ft): </label>
+        <input type="number" required
+                formControlName="hFt" 
+                class="form-control" 
+                placeholder="Feet" 
+                min="3" 
+                max="8">
+        <!-- Error Catch -->
+        <p *ngIf="hFt.touched && hFt.invalid"
+          class = "error">
+          <sup>*</sup>Please enter a valid height.
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+      <!-- hIn-->
+      <div class="row">
+        <label>Height(In): </label>
+        <input type="number" required
+                formControlName="hIn" 
+                class="form-control" 
+                placeholder="Inches" 
+                min="0" 
+                max="11">
+        <!-- Error Catch -->
+        <p *ngIf="hIn.touched && hIn.invalid"
+          class = "error">
+          <sup>*</sup>Please enter a valid height.
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+      <!-- Gender-->
+      <div class="row">
+        <label>Gender: </label>
+        <select formControlName="gender" 
+                class="form-control" 
+                required>
+          <option *ngFor="let gen of genders" [value]="gen">{{gen}}</option>
+        </select>
+        <!-- Error Catch -->
+        <p *ngIf="gender.touched && gender.invalid"
+          class = "error">
+          <sup>*</sup>Please choose a gender.
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+      <!-- Goal-->
+      <div class="row">
+        <label>Goal: </label>
+        <select class="form-control" 
+                required
+                formControlName="goal">
+          <option *ngFor="let goal of goalTypes" [value]="goal">{{goal}}</option>
+        </select>
+        <!-- Error Catch -->
+        <p *ngIf="goal.touched && goal.invalid"
+          class = "error">
+          <sup>*</sup>Please choose a goal.
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+      <!-- Activity Level-->
+      <div class="row">
+        <label>Activity Level: </label>
+        <select class="form-control"
+                required
+                formControlName="activity">
+          <option *ngFor="let t of activityTypes" [value]="t">{{t}}</option>
+        </select>
+        <!-- Error Catch -->
+        <p *ngIf="activity.touched && activity.invalid"
+          class = "error">
+          <sup>*</sup>Please choose your activity level.
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+      <!-- Goal Weight-->
+      <div class="row">
+        <label>Goal Weight(lbs): </label>
+        <input type="number" 
+                formControlName="goalweight" 
+                class="form-control" 
+                placeholder="Goal Weight" 
+                min="75" 
+                max="500">
+        <!-- Error Catch -->
+        <p *ngIf="goalweight.touched && goalweight.invalid"
+          class = "error">
+          <sup>*</sup>Please enter a valid weight.
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+      <!-- Change in weight-->
+      <div class="row">
+        <label>Loss/Gain per Week(lbs)*: </label>
+        <input  [attr.disabled]="goals == 'Maintain' ? '' : null"
+                type="number" 
+                formControlName="change" 
+                class="form-control" 
+                placeholder="Loss/Gain" 
+                min="0" 
+                max="2">
+        <!-- Error Catch -->
+        <p *ngIf="change.touched && change.invalid"
+          class = "error">
+          <sup>*</sup>Please enter a valid value. It is not healthy to gain/lose more than 2 pounds per week.
+        </p>
+      </div>
+      <!----------------------------------------------------------------------------------------------->
+      <div class="form-group text-right">
+        <!-- ADD ROUTER LINK LATER TO DASHBOARD routerLink="/dashboard"-->
+        <button type="button" class="btn btn-secondary gap-right" (click)="resetForm()">Reset</button>
+        <button type="submit" class="btn btn-success" [disabled]="!userinfoForm.valid">Finish Registration</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--
+
+      CONTINUE
+      <div class="button"><button type="button" routerLink="/signup-step3" mdbBtn color="info" block="true" class="my-4" type="submit">Continue</button> </div>
+      <label>test: {{userinfo.gender}}</label>
+      </form>
+    </div>
+</div>
+--->

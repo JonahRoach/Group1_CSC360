@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="calculateBMI">
+    <h2>Calculate your Body Mass Index</h2>
+  </div>
+
+  <div class="content columns" *ngIf="showCurrent">
+    <h3> Current BMI is: </h3> 
+    <h1>{{currentbmi}}</h1>
+  </div>
+  <button class="button is-success" (click)="calculateCurrentBMI()" *ngIf="!showCurrent" >Calculate Current BMI</button>
+  
+
+  <form [formGroup]="bmiform" novalidate>
+    <!-- Weight-->
+    <div class="row">
+        <label>Weight(lbs): </label>
+        <input type="number" required
+                formControlName="newWeight" 
+                class="form-control" 
+                placeholder="Weight" 
+                min="75" 
+                max="500">
+        <!-- Error Catch -->
+        <p *ngIf="newWeight.touched && newWeight.invalid"
+          class = "error">
+          <sup>*</sup>Please enter a valid weight.
+        </p>
+      </div>
+    <!----------------------------------------------------------------------------------------------->
+      <!-- hFt-->
+      <div class="row">
+          <label>Height(Ft): </label>
+          <input type="number" required
+                  formControlName="newhFt" 
+                  class="form-control" 
+                  placeholder="Feet" 
+                  min="3" 
+                  max="8">
+          <!-- Error Catch -->
+          <p *ngIf="newhFt.touched && newhFt.invalid"
+            class = "error">
+            <sup>*</sup>Please enter a valid height.
+          </p>
+        </div>
+        <!----------------------------------------------------------------------------------------------->
+        <!-- hIn-->
+        <div class="row">
+          <label>Height(In): </label>
+          <input type="number" required
+                  formControlName="newhIn" 
+                  class="form-control" 
+                  placeholder="Inches" 
+                  min="0" 
+                  max="11">
+          <!-- Error Catch -->
+          <p *ngIf="newhIn.touched && newhIn.invalid"
+            class = "error">
+            <sup>*</sup>Please enter a valid height.
+          </p>
+        </div>
+    <button class="button is-success" (click)="calculateNewBMI()" [disabled]="!userinfoForm.valid" >Calculate New BMI</button>
+  </form>
+  <div class="content columns" *ngIf="showNew">
+      <h3> New BMI is: </h3> 
+      <h1>{{newbmi}}</h1>
+    </div>
+
+
+  <div style="margin-top: 250px"></div>
+</div>

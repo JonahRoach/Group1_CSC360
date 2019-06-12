@@ -1,0 +1,57 @@
+<div class="container d-flex flex-column">
+
+
+  <!-- <input id="searchInput" class="justify-content-center" type="text" placeholder="Search..."> -->
+
+  <!-- <div *ngIf="result">
+    <p>{{result.branded[0].food_name}}</p>
+  </div> -->
+
+  <h2 class="text-center">Search foods</h2>
+
+  <div class="ng-autocomplete center">
+    <ng-autocomplete [data]="data" [searchKeyword]="keyword" minQueryLength="3" (selected)='selectEvent($event)'
+      (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
+      [notFoundTemplate]="notFoundTemplate">
+    </ng-autocomplete>
+
+    <ng-template #itemTemplate let-item>
+      <a [innerHTML]="item.food_name"></a>
+    </ng-template>
+
+    <ng-template #notFoundTemplate let-notFound>
+      <div [innerHTML]="notFound"></div>
+    </ng-template>
+  </div>
+
+  <div *ngIf="nutritionData">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>Calories</th>
+          <td>{{nutritionData.foods[0].nf_calories}}</td>
+        </tr>
+        <tr>
+          <th>Total Fat</th>
+          <td>{{nutritionData.foods[0].nf_total_fat}}g</td>
+        </tr>
+        <tr>
+          <th>Cholestrol</th>
+          <td>{{nutritionData.foods[0].nf_cholesterol}}mg</td>
+        </tr>
+        <tr>
+          <th>Sodium</th>
+          <td>{{nutritionData.foods[0].nf_sodium}}mg</td>
+        </tr>
+        <tr>
+          <th>Total Carbohydrates</th>
+          <td>{{nutritionData.foods[0].nf_total_carbohydrate}}g</td>
+        </tr>
+        <tr>
+          <th>Protein</th>
+          <td>{{nutritionData.foods[0].nf_protein}}g</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
