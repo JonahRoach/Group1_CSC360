@@ -21,6 +21,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FoodComponent } from './food/food.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { BmiComponent } from './bmi/bmi.component';
+// HttpClient
+import { HttpClientModule } from '@angular/common/http';
+// Autocomplete component for angular
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import { BmiComponent } from './bmi/bmi.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
+    AutocompleteLibModule,
   ],
   providers: [AngularFireAuth],
   bootstrap: [AppComponent]
