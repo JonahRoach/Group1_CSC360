@@ -7,7 +7,9 @@
     <p>{{result.branded[0].food_name}}</p>
   </div> -->
 
-  <div class="ng-autocomplete">
+  <h2 class="text-center">Search foods</h2>
+
+  <div class="ng-autocomplete center">
     <ng-autocomplete [data]="data" [searchKeyword]="keyword" minQueryLength="3" (selected)='selectEvent($event)'
       (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
       [notFoundTemplate]="notFoundTemplate">
@@ -31,11 +33,11 @@
         </tr>
         <tr>
           <th>Total Fat</th>
-          <td>{{nutritionData.foods[0].nf_total_fat}}</td>
+          <td>{{nutritionData.foods[0].nf_total_fat}}g</td>
         </tr>
         <tr>
           <th>Cholestrol</th>
-          <td>{{nutritionData.foods[0].nf_cholestrol}}</td>
+          <td>{{nutritionData.foods[0].nf_cholesterol}}mg</td>
         </tr>
         <tr>
           <th>Sodium</th>
