@@ -7,8 +7,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FoodComponent } from './food/food.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { BmiComponent } from './bmi/bmi.component';
-import { SignupUserdataComponent } from './components/signup-userdata/signup-userdata.component';
-import { SignupUsergoalsComponent } from './components/signup-usergoals/signup-usergoals.component';
+import { SignupUserdataComponent } from './signup-userdata/signup-userdata.component';
+import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
 
 const routes: Routes = [
   {
@@ -44,8 +44,8 @@ const routes: Routes = [
     component: SignupUserdataComponent,
   },
   {
-    path: 'signup-step3',
-    component: SignupUsergoalsComponent,
+    path: 'update-userdata',
+    component: UpdateUserdataComponent,
   },
 ];
 

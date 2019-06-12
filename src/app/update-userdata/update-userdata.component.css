@@ -21,6 +21,7 @@ a {
 .container2 {
     width: 50%;
     margin: auto;
+    text-align: center;
 }
 .profileNav{
     background-color: #e2e2e2;
@@ -60,7 +61,7 @@ a {
 }
 
 .weirdfuckingdropdown{
-    padding-top: 10px;
+    padding-top: 0px;
     padding-bottom: 10px;
 }
 .underdropdown{
