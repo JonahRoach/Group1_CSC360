@@ -8,6 +8,7 @@ import { auth } from 'firebase';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   uid = this.afAuth.authState.pipe(
     map(authState => {
@@ -22,13 +23,7 @@ export class UserService {
   constructor(private afAuth: AngularFireAuth) { 
 
   }
-  emailRegister(email, password){
-    this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-  }
-  emailLogin(email, password){
-    this.afAuth.auth.signInWithEmailAndPassword(email, password);
-  }
-  googleLogin(){
+  login(){
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
   logout(){
@@ -37,5 +32,23 @@ export class UserService {
   isLoggedIn(){
     return this.afAuth.authState.pipe(first()).toPromise();
   }
+
+  manualLogin(e: string, p:string){
+    this.afAuth.auth.signInWithEmailAndPassword(e, p).catch(function(error){
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      this.err = "Please check username or password input";
+    });
+  }
+  // set(e:string, p:string){
+  //   this.em = e;
+  //   this.pw = p;
+  // }
+  // em: string = "a";
+  // pw: string = "p";
+  // ems: string;
+  // pws: string;
+  err:string = "";
 }
+
 
