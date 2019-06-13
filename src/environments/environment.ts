@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyABGbNFMgQM7xJEknHmmziAPK9ETzUZxTI",
-    authDomain: "login-bea27.firebaseapp.com",
-    databaseURL: "https://login-bea27.firebaseio.com",
-    projectId: "login-bea27",
-    storageBucket: "login-bea27.appspot.com",
-    messagingSenderId: "316409651053",
-    appId: "1:316409651053:web:d80b32289bce39f4"
+    apiKey: "AIzaSyCmGl-zGefcQ-2aUgz6j3-zqM44mO_Eo5E",
+    authDomain: "workoutapp-d5252.firebaseapp.com",
+    databaseURL: "https://workoutapp-d5252.firebaseio.com",
+    projectId: "workoutapp-d5252",
+    storageBucket: "",
+    messagingSenderId: "786364091174",
+    appId: "1:786364091174:web:e1b38c6363166427"
   }
 };
 

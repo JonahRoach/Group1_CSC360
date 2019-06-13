@@ -35,5 +35,9 @@ export class HomepageComponent implements OnInit {
     });
   }
 
-  
+  calculate(weight:number, rep:number){
+    this.total = weight * (1 + rep/30);
+  }
+  total:number = 0;
+  clicked:boolean = false;
 }
