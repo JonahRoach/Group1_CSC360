@@ -22,17 +22,14 @@ export class UserService {
   constructor(private afAuth: AngularFireAuth) { 
 
   }
+  emailRegister(email, password){
+    this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+  }
+  emailLogin(email, password){
+    this.afAuth.auth.signInWithEmailAndPassword(email, password);
+  }
   googleLogin(){
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  }
-  facebookLogin(){
-    this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
-  }
-  twitterLogin(){
-    this.afAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
-  }
-  gitHubLogin(){
-    this.afAuth.auth.signInWithPopup(new auth.GithubAuthProvider());
   }
   logout(){
     this.afAuth.auth.signOut();

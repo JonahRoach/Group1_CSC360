@@ -1,3 +1,49 @@
+<ng-template #register let-modal>
+        
+        <div class="modal-header">
+          <!-- HEADER -->
+          
+          <h4 class="modal-title" id="modal-basic-title">Login</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- BODY -->
+          <div *ngIf="user.uid | async as uid;  else login">
+              User {{uid}} has registered .
+              
+              <ng-container *ngIf="user.isLoggedIn(); then modal.dismiss('');">
+                <!-- TODO!: Route to main page-->
+              </ng-container>  <!-- Exit modal if already logged in -->
+          
+          </div> 
+          
+          <form>
+              <div class="form-group">
+                  <label for="inputUserName">Username</label>
+                  <input class="form-control" placeholder="Login Username"
+                          type="text" id="inputUserName" />
+              </div>
+              <div class="form-group">
+                  <label for="inputPassword">Password</label>
+                  <input class="form-control" placeholder="Login Password"
+                          type="password" id="inputPassword" />
+              </div>
+              <button type="button" class="btn btn-info" (click)="user.login()" >Login With Google</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <!-- FOOTER --> 
+          <button type="button" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
+          
+          <button type="button" class="btn btn-success" (click)="open(register)" >Sign Up</button>
+        </div>
+      </ng-template>
+
+
+
 <h2>Register</h2>
 <div class="container-fluid">
     <div class="form-group">
