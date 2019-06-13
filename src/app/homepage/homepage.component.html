@@ -27,12 +27,12 @@
             <div class="form-group">
                 <label for="inputUserName">Email</label>
                 <input class="form-control" placeholder="Login Email"
-                        type="text" id="inputUserName" />
+                        type="text" id="inputUserName" #registerEmail/>
             </div>
             <div class="form-group">
                 <label for="inputPassword">Password</label>
                 <input class="form-control" placeholder="Login Password"
-                        type="password" id="inputPassword" />
+                        type="password" id="inputPassword" #registerPassword/>
             </div>
             <button type="button" class="btn btn-info" (click)="user.login()" >Login With Google</button>
             
@@ -40,7 +40,7 @@
       </div>
       <div class="modal-footer">
         <!-- FOOTER --> 
-        <button type="button" class="btn btn-primary">Register</button>
+        <button type="button" class="btn btn-primary" (click)="user.emailRegister(registerEmail.value, registerPassword.value)">Register</button>
         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
       </div>
     </ng-template>
