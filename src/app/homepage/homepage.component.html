@@ -83,12 +83,12 @@
                         type="password" id="inputPassword" #password/>
             </div>
             
-            <button type="button" class="btn btn-info" (click)="user.login()" >Login With Google</button>
+            <button type="button" class="btn btn-info" (click)="user.googleLogin()" >Login With Google</button>
         </form>
       </div>
       <div class="modal-footer">
         <!-- FOOTER --> 
-        <button type="button" class="btn btn-primary" (click)="user.manualLogin(email.value, password.value)" >Login</button>
+        <button type="button" class="btn btn-primary" (click)="user.emailLogin(email.value, password.value)" >Login</button>
         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
         <p>{{user.err}}</p>
       </div>
