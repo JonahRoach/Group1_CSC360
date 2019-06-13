@@ -34,6 +34,9 @@ export class HomepageComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
-
-  
+  calculate(weight:number, rep:number){
+    this.total = weight * (1 + rep/30);
+  }
+  total:number = 0;
+  clicked:boolean = false;
 }
