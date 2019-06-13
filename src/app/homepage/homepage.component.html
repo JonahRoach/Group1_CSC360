@@ -10,84 +10,118 @@
     <!-- <a href="#" class="sign-in grey">Sign in</a> -->
 
     <ng-template #content let-modal>
-        
-        <div class="modal-header">
-          <!-- HEADER -->
-          
-          <h4 class="modal-title" id="modal-basic-title">Login</h4>
-          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-            <span aria-hidden="true">&times;</span>
-          </button>
+
+      <div class="modal-header">
+        <!-- HEADER -->
+
+        <h4 class="modal-title" id="modal-basic-title">Login</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- BODY -->
+        <div *ngIf="user.uid | async as uid;  else login">
+          User {{uid}} is logged in.
+
+          <ng-container *ngIf="user.isLoggedIn(); then modal.dismiss('');">
+            <!-- TODO!: Route to main page-->
+          </ng-container> <!-- Exit modal if already logged in -->
+
         </div>
-        <div class="modal-body">
-          <!-- BODY -->
-          <div *ngIf="user.uid | async as uid;  else login">
-              User {{uid}} is logged in.
-              
-              <ng-container *ngIf="user.isLoggedIn(); then modal.dismiss('');">
-                <!-- TODO!: Route to main page-->
-              </ng-container>  <!-- Exit modal if already logged in -->
-          
-          </div> 
-          
-          <form>
-              <div class="form-group">
-                  <label for="inputUserName">Username</label>
-                  <input class="form-control" placeholder="Login Username"
-                          type="text" id="inputUserName" />
-              </div>
-              <div class="form-group">
-                  <label for="inputPassword">Password</label>
-                  <input class="form-control" placeholder="Login Password"
-                          type="password" id="inputPassword" />
-              </div>
-              <button type="button" class="btn btn-info" (click)="user.login()" >Login With Google</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <!-- FOOTER --> 
-          <button type="button" class="btn btn-primary">Login</button>
-          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
-          
-        </div>
-      </ng-template>
-      
-      <button class="btn btn-light btn-sm" (click)="open(content)">Login</button>
-      <button class="btn btn-light btn-sm" (click)="user.logout()">TEMP: logout</button>
-      
-      <hr>
+
+        <form>
+          <div class="form-group">
+            <label for="inputUserName">Username</label>
+            <input class="form-control" placeholder="Login Username" type="text" id="inputUserName" />
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input class="form-control" placeholder="Login Password" type="password" id="inputPassword" />
+          </div>
+          <button type="button" class="btn btn-info" (click)="user.login()">Login With Google</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- FOOTER -->
+        <button type="button" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
+
+      </div>
+    </ng-template>
+
+    <button class="btn btn-light btn-sm" (click)="open(content)">Login</button>
+    <button class="btn btn-light btn-sm" (click)="user.logout()">TEMP: logout</button>
+
+    <hr>
   </div>
 </div>
 
 <div class="container-fluid part bg-yellow">
-  <div class="row">
-    <div class="col-sm-4">
-      <img class="svg" src="../../assets/svg/chronograph-160753.svg">
-    </div>
-    <div class="col-sm-8 text-center">
-      <h2 class="text-uppercase">Calorie Counter</h2>
-      <p>Search through a database of foods to get nutritional facts of the foods you eat. You'll be able to keep track
-        of calories, fats, sodium, sugars, and more. Keep a record of the food you've eaten and make adjustments as
-        needed. Also enroll in a meal plan for a concrete set of meals to take throughout the week.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="svg" src="../../assets/svg/chronograph-160753.svg">
+      </div>
+      <div class="col-sm-8 text-center">
+        <h2 class="text-uppercase">Calorie Counter</h2>
+        <p>Search through a database of foods to get nutritional facts of the foods you eat. You'll be able to keep
+          track
+          of calories, fats, sodium, sugars, and more. Keep a record of the food you've eaten and make adjustments as
+          needed. Also enroll in a meal plan for a concrete set of meals to take throughout the week.</p>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="container-fluid part bg-grey">
-  <div class="row">
-    <div class="col-sm-8 text-center">
-      <h2 class="text-uppercase">Workout Plan</h2>
-      <p>Looking to find your next workout? Gain access to thousands of different exercises and workouts for the next
-        time you hit the gym. You'll also have access to multiple workout plans ranging from your experience to choose.
-        from</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 text-center">
+        <h2 class="text-uppercase">Workout Plan</h2>
+        <p>Looking to find your next workout? Gain access to thousands of different exercises and workouts for the next
+          time you hit the gym. You'll also have access to multiple workout plans ranging from your experience to
+          choose.
+          from</p>
+      </div>
+      <div class="col-sm-4">
+        <img class="svg" src="../../assets/svg/dumbbells-293955.svg">
+      </div>
     </div>
-    <div class="col-sm-4">
-      <img class="svg" src="../../assets/svg/dumbbells-293955.svg">
+  </div>
+</div>
+
+<div class="container-fluid text-center part bg-blue">
+  <h2 class="text-uppercase">our team</h2>
+
+  <div class="container">
+    <div class="row">
+      <div class="mt-2 col-sm-6">
+        <h3>Nathaniel Alvarado</h3>
+      </div>
+      <div class="mt-2 col-sm-6">
+        <h3>Dariusz Dulian</h3>
+      </div>
+      <div class="mt-2 col-sm-6">
+        <h3>Jason Lai</h3>
+      </div>
+      <div class="mt-2 col-sm-6">
+        <h3>Caroline Muller</h3>
+      </div>
+      <div class="mt-2 col-sm-6">
+        <h3>Archie Paredes</h3>
+      </div>
+      <div class="mt-2 col-sm-6">
+        <h3>Jonah Roach</h3>
+      </div>
+      <div class="mt-2 col-sm-6">
+        <h3>Michael Szal</h3>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="container-fluid text-center part bg-yellow">
-  <h2 class="text-uppercase">and more</h2>
-  <p>We have additional tools for finding your BMI and planning goals.</p>
+  <h2 class="text-uppercase">and more on the way...</h2>
+  <p>We have additional tools such as finding your BMI and others in the works.</p>
 </div>
