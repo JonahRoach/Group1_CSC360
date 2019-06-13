@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExeinfoComponent } from './exeinfo/exeinfo.component';
 // Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +23,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FoodComponent } from './food/food.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { BmiComponent } from './bmi/bmi.component';
+// HttpClient
+import { HttpClientModule } from '@angular/common/http';
+// Autocomplete component for angular
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { SignupUserdataComponent } from './signup-userdata/signup-userdata.component';
+import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +42,9 @@ import { BmiComponent } from './bmi/bmi.component';
     FoodComponent,
     WorkoutComponent,
     BmiComponent,
+    SignupUserdataComponent,
+    UpdateUserdataComponent,
+    ExeinfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +54,10 @@ import { BmiComponent } from './bmi/bmi.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
+    AutocompleteLibModule,
+    BrowserAnimationsModule,
   ],
   providers: [AngularFireAuth],
   bootstrap: [AppComponent]

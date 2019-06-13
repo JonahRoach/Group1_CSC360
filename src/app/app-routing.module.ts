@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ExeinfoComponent } from './exeinfo/exeinfo.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
@@ -7,6 +8,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FoodComponent } from './food/food.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { BmiComponent } from './bmi/bmi.component';
+import { SignupUserdataComponent } from './signup-userdata/signup-userdata.component';
+import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
 
 const routes: Routes = [
   {
@@ -36,6 +39,17 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutUsComponent,
+  },
+  {
+    path: 'signup-step2',
+    component: SignupUserdataComponent,
+  },
+  {
+    path: 'update-userdata',
+    component: UpdateUserdataComponent,
+  },
+  { path: 'exeinfo/:name', 
+    component: ExeinfoComponent,
   },
 ];
 
