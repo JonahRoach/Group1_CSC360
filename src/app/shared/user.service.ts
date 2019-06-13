@@ -33,6 +33,14 @@ export class UserService {
     return this.afAuth.authState.pipe(first()).toPromise();
   }
 
+  manualRegister(e: string, p:string){
+    this.afAuth.auth.createUserWithEmailAndPassword(e, p).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      this.err = "Please enter a valid email address"
+    });
+  }
+
   manualLogin(e: string, p:string){
     this.afAuth.auth.signInWithEmailAndPassword(e, p).catch(function(error){
       var errorCode = error.code;
