@@ -1,30 +1,34 @@
-<div class = "contactContainer">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<body>
+
+<div class = "contactContainer" style = "padding: 25px">
   <div class="row">
     <div class = "col-md-8">
-      <div class = "well well-md">
-        <form>
+      <div class = "card bg-primary">
+        <form id=contactForm>
           <div class = "row">
             <div class = "col-md-6">
               <div class = "form-group">
-                <label for="name">
+                <label for="name" style="color:white; padding-left:10px;">
                   Name
                 </label>
                 <input type="text" class = "form-control" id="name" placeholder = "Enter Name" required="required" />
               </div>
-              <!-- Area where the user inputs their information-->
+              
               <div class="form-group">
-                <label for="email">
+                <label for="email" style="color:white; padding-left:10px;">
                   Email Address
                 </label>
                 <div class = "input-group">
                   <span class = "input-group-addon">
-                    <span class = "glyphicon glyphicon-envelope"></span>
+                    <span class = "fa fa-envelope" style = "color:white; padding-left:10px; padding-right: 10px;"></span>
                   </span>
                   <input type = "email" class="form-control" id="email" placeholder="Enter Email" required="required" />
                 </div>   
               </div>
               <div class = "form-group">
-                <label for="subject">
+                <label for="subject" style="color:white; padding-left:10px;">
                   Subject
                 </label>
                 <select id="subject" name = "subject" class = "form-control" required = "required">
@@ -40,27 +44,27 @@
                 </select>
               </div>
             </div>  
-              <!-- Area where user types their message-->
+
             <div class = "form-group">
-              <label for="name">
+              <label for="name" style="color:white; padding-left:10px;">
                 Message
               </label>
               <textarea name = "message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder="Message">                
               </textarea>
             </div>
           </div>
-          <!--Submit button-->
+
           <div class="col-md-12">
-            <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">Send Message</button>
+            <button type="submit" class="btn btn-light pull-right" id="btnContactUs" style = "padding: 5px; color:blue">Send Message</button>
           </div>
         </form>
       </div>
     </div>
-      <!-- Area where we display our contact information-->
+
       <div class="col-md-4">
       <form>
         <legend>
-          <span class="glyphicon glyphicon-globe"></span>
+          <span class="fa fa-globe" ></span>
           Our Domain
         </legend>
         <address>
@@ -72,3 +76,6 @@
     </div>
   </div>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+</body>
