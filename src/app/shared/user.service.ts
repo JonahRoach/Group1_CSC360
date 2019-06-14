@@ -60,9 +60,22 @@ export class UserService {
     }
   }
   
+  routeWhatever() {
+    if (this.isLoggedIn()) {
+      this.router.navigateByUrl('/dashboard').catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        this.err = "Could not route to next step in signup";
+      });
+    }
+  }
   registerAndRoute(e: string, p:string) {
     this.emailRegister(e, p);
     this.routeToSignUpPt2();
+  }
+  loginAndRoute(e: string, p:string) {
+    this.emailLogin(e, p);
+    this.routeWhatever();
   }
   // set(e:string, p:string){
   //   this.em = e;
