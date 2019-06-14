@@ -29,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { SignupUserdataComponent } from './signup-userdata/signup-userdata.component';
 import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { UpdateUserdataComponent } from './update-userdata/update-userdata.compo
     SignupUserdataComponent,
     UpdateUserdataComponent,
     ExeinfoComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

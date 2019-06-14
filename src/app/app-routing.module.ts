@@ -10,11 +10,16 @@ import { WorkoutComponent } from './workout/workout.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { SignupUserdataComponent } from './signup-userdata/signup-userdata.component';
 import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomepageComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
   {
     path: 'dashboard',
