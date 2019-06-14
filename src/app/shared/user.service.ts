@@ -52,14 +52,14 @@ export class UserService {
 
   routeToSignUpPt2() {
     if (this.isLoggedIn()) {
-      this.router.navigateByUrl('/dashboard').catch(function(error) {
+      this.router.navigateByUrl('/signup-step2').catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
-        this.err = "Could not route to dashboard";
+        this.err = "Could not route to next step in signup";
       });
     }
   }
-
+  
   registerAndRoute(e: string, p:string) {
     this.emailRegister(e, p);
     this.routeToSignUpPt2();
