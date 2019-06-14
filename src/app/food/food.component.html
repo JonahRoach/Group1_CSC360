@@ -1,5 +1,4 @@
-<div class="container d-flex flex-column">
-
+<div class="mt-3 container d-flex flex-column">
 
   <!-- <input id="searchInput" class="justify-content-center" type="text" placeholder="Search..."> -->
 
@@ -22,6 +21,39 @@
     <ng-template #notFoundTemplate let-notFound>
       <div [innerHTML]="notFound"></div>
     </ng-template>
+  </div>
+
+  <!-- Placeholder for when page just loaded -->
+
+  <div *ngIf="!nutritionData">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>Calories</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Total Fat</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Cholestrol</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Sodium</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Total Carbohydrates</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Protein</th>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <div *ngIf="nutritionData">

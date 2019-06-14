@@ -3,18 +3,28 @@ import { Routes, RouterModule } from '@angular/router';
 import { ExeinfoComponent } from './exeinfo/exeinfo.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AboutUsComponent } from './components/about-us/about-us.component';
-import { ContactComponent } from './components/contact/contact.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
 import { FoodComponent } from './food/food.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { SignupUserdataComponent } from './signup-userdata/signup-userdata.component';
 import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
+import { ProfileComponent } from './profile/profile.component';
+import { OneRepMaxComponent } from './one-rep-max/one-rep-max.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomepageComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+  },
+  {
+    path: 'one-rep-max',
+    component: OneRepMaxComponent
   },
   {
     path: 'dashboard',

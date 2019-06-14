@@ -1,0 +1,9 @@
+.stuff {
+    width:50%;
+    position: absolute;
+    left:50%;
+    top:0%;
+    transform: translate(-50%, 15%);
+  }
+  
+  

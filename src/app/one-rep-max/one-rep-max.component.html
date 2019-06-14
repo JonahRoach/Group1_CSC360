@@ -1,0 +1,24 @@
+<div class="stuff">
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">One-Rep Max Calculator</h1>
+        <p class="lead">How heavy can you lift?</p>
+      </div>
+  </div>
+  <form>
+    <div class="form-group">
+        <label for="inputWeight">Weight</label>
+        <input class="form-control"  placeholder="Weight"
+                type="number" id="inputWeight" #weight/>
+    </div>
+    <div class="form-group">
+        <label for="inputReps">Repetitions</label>
+        <input class="form-control" placeholder="Repetitions"
+                type="number" id="inputRepetitions" #rep/>
+    </div>
+    <p> {{total}} lbs</p>
+  </form>
+  
+  <button type="button" class="btn btn-primary" (click)="calculate(weight.value, rep.value)" >Calculate</button>
+  
+</div>
