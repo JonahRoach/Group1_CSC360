@@ -11,6 +11,7 @@ import { BmiComponent } from './bmi/bmi.component';
 import { SignupUserdataComponent } from './signup-userdata/signup-userdata.component';
 import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
 import { ProfileComponent } from './profile/profile.component';
+import { OneRepMaxComponent } from './one-rep-max/one-rep-max.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+  },
+  {
+    path: 'one-rep-max',
+    component: OneRepMaxComponent
   },
   {
     path: 'dashboard',

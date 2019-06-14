@@ -30,6 +30,7 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { SignupUserdataComponent } from './signup-userdata/signup-userdata.component';
 import { UpdateUserdataComponent } from './update-userdata/update-userdata.component';
 import { ProfileComponent } from './profile/profile.component';
+import { OneRepMaxComponent } from './one-rep-max/one-rep-max.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ProfileComponent } from './profile/profile.component';
     UpdateUserdataComponent,
     ExeinfoComponent,
     ProfileComponent,
+    OneRepMaxComponent,
   ],
   imports: [
     BrowserModule,

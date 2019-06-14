@@ -62,7 +62,7 @@ export class UserService {
   
   routeWhatever() {
     if (this.isLoggedIn()) {
-      this.router.navigateByUrl('/dashboard').catch(function(error) {
+      this.router.navigateByUrl('/profile').catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
         this.err = "Could not route to next step in signup";
