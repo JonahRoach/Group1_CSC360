@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from '../shared/user.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
     this.navbarOpen = !this.navbarOpen;
   }
 
-  constructor() { }
+  constructor(public user:UserService) { }
 
   ngOnInit() {
   }
