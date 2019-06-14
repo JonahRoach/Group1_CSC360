@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { of as observableOf, observable } from 'rxjs';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { map, first } from 'rxjs/operators'
 import { auth } from 'firebase';
-
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +20,10 @@ export class UserService {
     })
   );
   isAdmin = observableOf(true);
-  constructor(private afAuth: AngularFireAuth) { 
+  constructor(private afAuth: AngularFireAuth, private router: Router) { 
 
   }
+
   googleLogin(){
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
@@ -47,6 +48,21 @@ export class UserService {
       var errorMessage = error.message;
       this.err = "Please check username or password input";
     });
+  }
+
+  routeToSignUpPt2() {
+    if (this.isLoggedIn()) {
+      this.router.navigateByUrl('/dashboard').catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        this.err = "Could not route to dashboard";
+      });
+    }
+  }
+
+  registerAndRoute(e: string, p:string) {
+    this.emailRegister(e, p);
+    this.routeToSignUpPt2();
   }
   // set(e:string, p:string){
   //   this.em = e;
