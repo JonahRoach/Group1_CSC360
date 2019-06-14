@@ -88,7 +88,7 @@
       </div>
       <div class="modal-footer">
         <!-- FOOTER --> 
-        <button type="button" class="btn btn-primary" (click)="user.emailLogin(email.value, password.value)" >Login</button>
+        <button type="button" class="btn btn-primary" (click)="user.loginAndRoute(email.value, password.value)" >Login</button>
         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close')">Close</button>
         <p>{{user.err}}</p>
       </div>
